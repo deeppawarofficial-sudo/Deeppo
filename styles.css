@@ -16,7 +16,7 @@ html {
     --border-color: #e2e8f0;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --nav-bg: rgba(255, 255, 255, 0.95);
-    --hero-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hero-bg: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
 }
 
 [data-theme="dark"] {
@@ -70,7 +70,7 @@ body {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #f97316;
 }
 
 .nav-logo i {
@@ -93,7 +93,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #2563eb;
+    color: #f97316;
 }
 
 .nav-link::after {
@@ -103,7 +103,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: #2563eb;
+    background: #f97316;
     transition: width 0.3s ease;
 }
 
@@ -215,7 +215,7 @@ body {
     right: -8px;
     bottom: -8px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #fbbf24, #f59e0b, #ef4444, #8b5cf6, #06b6d4);
+    background: linear-gradient(45deg, #f97316, #ea580c, #dc2626, #7c2d12, #f59e0b);
     background-size: 400% 400%;
     animation: gradientShift 3s ease infinite, ringRotate 8s linear infinite;
     z-index: -1;
@@ -270,7 +270,7 @@ body {
 }
 
 .highlight {
-    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    background: linear-gradient(45deg, #f97316, #ea580c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -309,17 +309,17 @@ body {
 }
 
 .btn-primary {
-    background: #fbbf24;
-    color: #1f2937;
-    border-color: #fbbf24;
+    background: #f97316;
+    color: #ffffff;
+    border-color: #f97316;
 }
 
 .btn-primary:hover {
     background: transparent;
-    color: #fbbf24;
-    border-color: #fbbf24;
+    color: #f97316;
+    border-color: #f97316;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
 }
 
 .btn-secondary {
@@ -330,7 +330,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #667eea;
+    color: #f97316;
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
 }
@@ -354,7 +354,7 @@ body {
 
 .code-line {
     height: 20px;
-    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    background: linear-gradient(90deg, #f97316, #ea580c);
     margin: 10px 0;
     border-radius: 10px;
     animation: codeTyping 2s ease-in-out infinite;
@@ -387,7 +387,7 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(45deg, #2563eb, #7c3aed);
+    background: linear-gradient(45deg, #f97316, #ea580c);
     border-radius: 2px;
 }
 
@@ -424,8 +424,8 @@ section {
 }
 
 .skill-tag {
-    background: #e0e7ff;
-    color: #3730a3;
+    background: #fed7aa;
+    color: #c2410c;
     padding: 8px 16px;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -434,7 +434,7 @@ section {
 }
 
 .skill-tag:hover {
-    background: #2563eb;
+    background: #f97316;
     color: white;
     transform: translateY(-2px);
 }
@@ -462,7 +462,7 @@ section {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #f97316;
     margin-bottom: 0.5rem;
 }
 
@@ -495,7 +495,7 @@ section {
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -549,14 +549,14 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #2563eb;
+    color: #f97316;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .project-link:hover {
-    color: #1d4ed8;
+    color: #ea580c;
 }
 
 /* Contact Section */
@@ -597,7 +597,7 @@ section {
 }
 
 .contact-method i {
-    color: #2563eb;
+    color: #f97316;
     font-size: 1.2rem;
     width: 20px;
 }
@@ -613,15 +613,15 @@ section {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: #e0e7ff;
-    color: #2563eb;
+    background: #fed7aa;
+    color: #f97316;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-link:hover {
-    background: #2563eb;
+    background: #f97316;
     color: white;
     transform: translateY(-3px);
 }
@@ -654,7 +654,7 @@ section {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #f97316;
 }
 
 .form-group textarea {
