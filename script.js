@@ -337,5 +337,13 @@ style.textContent = `
     [data-theme="dark"] .footer-links a:hover {
         color: #e2e8f0;
     }
+    
+    [data-theme="dark"] .profile-ring::before {
+        background: var(--hero-bg);
+    }
+    
+    [data-theme="dark"] .profile-image {
+        border: 4px solid rgba(255, 255, 255, 0.1);
+    }
 `;
 document.head.appendChild(style);
