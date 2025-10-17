@@ -180,10 +180,10 @@ function typeWriter(element, text, speed = 100) {
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 1000);
+        // Don't use typing animation for HTML content, just show it immediately
+        // The typing animation was causing HTML tags to be displayed as text
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
     }
 });
 
