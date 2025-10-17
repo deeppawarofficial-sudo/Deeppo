@@ -242,7 +242,38 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
-// Add CSS for loading animation
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+
+// Update toggle icon based on current theme
+function updateToggleIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
+
+// Initialize toggle icon
+updateToggleIcon(currentTheme);
+
+// Theme toggle functionality
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateToggleIcon(newTheme);
+});
+
+// Add CSS for loading animation and dark mode
 const style = document.createElement('style');
 style.textContent = `
     body {
@@ -273,6 +304,38 @@ style.textContent = `
     
     .notification-close:hover {
         opacity: 0.8;
+    }
+    
+    /* Dark mode specific styles */
+    [data-theme="dark"] .hero::before {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    }
+    
+    [data-theme="dark"] .skill-tag {
+        background: #334155;
+        color: #e2e8f0;
+    }
+    
+    [data-theme="dark"] .skill-tag:hover {
+        background: #2563eb;
+        color: white;
+    }
+    
+    [data-theme="dark"] .project-tech span {
+        background: #334155;
+        color: #e2e8f0;
+    }
+    
+    [data-theme="dark"] .footer {
+        background: #0f172a;
+    }
+    
+    [data-theme="dark"] .footer-links a {
+        color: #94a3b8;
+    }
+    
+    [data-theme="dark"] .footer-links a:hover {
+        color: #e2e8f0;
     }
 `;
 document.head.appendChild(style);
