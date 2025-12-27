@@ -3,274 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Pages Site</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Deep Pawar - Developer Quest Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-code"></i>
-                <span>My Portfolio</span>
+    <!-- HUD (Heads-Up Display) -->
+    <div class="hud">
+        <div class="hud-stats">
+            <div class="stat-item">
+                <span class="stat-label">Level</span>
+                <span class="stat-value" id="player-level">15</span>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <button class="theme-toggle" id="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="stat-item">
+                <span class="stat-label">XP</span>
+                <span class="stat-value" id="player-xp">2,450 / 3,000</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Quests</span>
+                <span class="stat-value" id="quests-completed">12</span>
             </div>
         </div>
-    </nav>
+        <div class="hud-controls">
+            <button class="hud-btn" id="sound-toggle" title="Toggle Sound">
+                <span>🔊</span>
+            </button>
+            <button class="hud-btn" id="fullscreen-toggle" title="Fullscreen">
+                <span>⛶</span>
+            </button>
+        </div>
+    </div>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        Hello, I'm <span class="highlight">Deep Pawar</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Full Stack Developer & Tech Enthusiast
-                    </p>
-                    <p class="hero-description">
-                        I create innovative web solutions and applications that solve real-world problems. 
-                        Passionate about modern technologies, clean architecture, and delivering exceptional user experiences.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="code-animation">
-                        <div class="code-line"></div>
-                        <div class="code-line"></div>
-                        <div class="code-line"></div>
-                        <div class="code-line"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Main Game Map Container -->
+    <div class="game-map-container" id="game-map">
+        <!-- Starter Village (About Me) -->
+        <div class="map-area starter-village" data-area="starter-village">
+            <div class="area-icon">🏘️</div>
+            <div class="area-label">Starter Village</div>
+            <div class="area-tooltip">Click to learn about the developer</div>
+        </div>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            I'm a passionate developer with expertise in modern web technologies and cloud solutions. 
-                            I specialize in building scalable applications using React, Node.js, and cloud platforms. 
-                            Always excited to learn new technologies and tackle challenging problems.
-                        </p>
-                        <div class="skills">
-                            <h3>Skills & Technologies</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">AWS</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Next.js</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">2+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">10+</div>
-                            <div class="stat-label">Technologies Mastered</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Forest of Fundamentals -->
+        <div class="map-area forest" data-area="forest">
+            <div class="area-icon">🌲</div>
+            <div class="area-label">Forest of Fundamentals</div>
+            <div class="area-tooltip">Beginner Projects & Learning</div>
+            <div class="quest-markers" id="forest-quests"></div>
+        </div>
 
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Portfolio Website</h3>
-                            <p>A modern, responsive portfolio website built with vanilla HTML, CSS, and JavaScript. Features smooth animations and mobile-first design.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Desert of APIs -->
+        <div class="map-area desert" data-area="desert">
+            <div class="area-icon">🏜️</div>
+            <div class="area-label">Desert of APIs</div>
+            <div class="area-tooltip">Backend & API Projects</div>
+            <div class="quest-markers" id="desert-quests"></div>
+        </div>
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Weather Dashboard</h3>
-                            <p>A responsive weather application with real-time data, location-based forecasts, and interactive charts using modern web APIs.</p>
-                            <div class="project-tech">
-                                <span>React</span>
-                                <span>API Integration</span>
-                                <span>Chart.js</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Castle of Mastery -->
+        <div class="map-area castle" data-area="castle">
+            <div class="area-icon">🏰</div>
+            <div class="area-label">Castle of Mastery</div>
+            <div class="area-tooltip">Advanced Projects</div>
+            <div class="quest-markers" id="castle-quests"></div>
+        </div>
 
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>GitHub Analytics Tool</h3>
-                            <p>A comprehensive GitHub analytics dashboard that tracks repository statistics, contribution patterns, and developer insights using GitHub API.</p>
-                            <div class="project-tech">
-                                <span>Node.js</span>
-                                <span>GitHub API</span>
-                                <span>D3.js</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                                <a href="#" class="project-link">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Skill Tree -->
+        <div class="map-area skill-tree-area" data-area="skill-tree">
+            <div class="area-icon">🌳</div>
+            <div class="area-label">Skill Tree</div>
+            <div class="area-tooltip">Unlocked Abilities</div>
+        </div>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Let's work together!</h3>
-                        <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out!</p>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <i class="fas fa-envelope"></i>
-                                <span>deeppawarofficial@gmail.com</span>
-                            </div>
-                            <div class="contact-method">
-                                <i class="fas fa-github"></i>
-                                <span>github.com/deeppawarofficial-sudo</span>
-                            </div>
-                            <div class="contact-method">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>India</span>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://github.com/deeppawarofficial-sudo" class="social-link" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/deep-pawar-b1b897298" class="social-link" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="social-link" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-link" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- Quest Log -->
+        <div class="map-area quest-log-area" data-area="quest-log">
+            <div class="area-icon">📜</div>
+            <div class="area-label">Quest Log</div>
+            <div class="area-tooltip">Experience & Resume</div>
+        </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2024 Deep Pawar. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
+        <!-- Final NPC (Contact) -->
+        <div class="map-area contact-npc" data-area="contact">
+            <div class="area-icon">👤</div>
+            <div class="area-label">Contact NPC</div>
+            <div class="area-tooltip">Start a quest together!</div>
+        </div>
+
+        <!-- Locked Areas (Coming Soon) -->
+        <div class="map-area locked" data-area="locked-1">
+            <div class="area-icon">🔒</div>
+            <div class="area-label">Coming Soon</div>
+        </div>
+        <div class="map-area locked" data-area="locked-2">
+            <div class="area-icon">🔒</div>
+            <div class="area-label">Coming Soon</div>
+        </div>
+    </div>
+
+    <!-- Modal System -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- NPC Dialogue Modal -->
+    <div class="npc-dialogue" id="npc-dialogue">
+        <div class="npc-portrait"></div>
+        <div class="dialogue-box">
+            <div class="dialogue-name" id="dialogue-name">NPC</div>
+            <div class="dialogue-text" id="dialogue-text">Welcome, traveler!</div>
+            <button class="dialogue-next" id="dialogue-next">Continue</button>
+        </div>
+    </div>
+
+    <!-- Skill Tree Modal -->
+    <div class="skill-tree-modal" id="skill-tree-modal">
+        <div class="skill-tree-container" id="skill-tree-container"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-title">Loading Developer Quest Map...</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
