@@ -210,7 +210,7 @@ export const educationData = {
 
 export const socialLinks = [
   { label: 'Email', href: 'mailto:deeppawar@example.com', icon: 'Mail' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/deeppawar', icon: 'Linkedin' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/deep-pawar-b1b897298/', icon: 'Linkedin' },
   { label: 'GitHub', href: 'https://github.com/deeppawarofficial-sudo', icon: 'Github' },
   { label: 'LeetCode', href: 'https://leetcode.com/zaemon_21', icon: 'Code2' },
 ];
